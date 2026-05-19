@@ -3701,12 +3701,37 @@
       ];
 
       STATE.partidos = [
-        { id: 'p1', fase: 'Fase de Grupos', equipo_local: { nombre: 'México', bandera: '🇲🇽' }, equipo_visita: { nombre: 'Ecuador', bandera: '🇪🇨' }, goles_local: 2, goles_visita: 1, estado: 'finalizado', estadio: 'SoFi Stadium', ciudad: 'Los Ángeles' },
-        { id: 'p2', fase: 'Fase de Grupos', equipo_local: { nombre: 'Brasil', bandera: '🇧🇷' }, equipo_visita: { nombre: 'Canadá', bandera: '🇨🇦' }, goles_local: 3, goles_visita: 0, estado: 'finalizado', estadio: 'MetLife Stadium', ciudad: 'Nueva York' },
-        { id: 'p3', fase: 'Fase de Grupos', equipo_local: { nombre: 'Argentina', bandera: '🇦🇷' }, equipo_visita: { nombre: 'Perú', bandera: '🇵🇪' }, goles_local: null, goles_visita: null, estado: 'pendiente', fecha: new Date(Date.now() + 86400000 * 2).toISOString(), estadio: 'AT&T Stadium', ciudad: 'Dallas' },
-        { id: 'p4', fase: 'Fase de Grupos', equipo_local: { nombre: 'España', bandera: '🇪🇸' }, equipo_visita: { nombre: 'Marruecos', bandera: '🇲🇦' }, goles_local: null, goles_visita: null, estado: 'pendiente', fecha: new Date(Date.now() + 86400000 * 3).toISOString(), estadio: 'Levi\'s Stadium', ciudad: 'Santa Clara' },
-        { id: 'p5', fase: 'Fase de Grupos', equipo_local: { nombre: 'Francia', bandera: '🇫🇷' }, equipo_visita: { nombre: 'Alemania', bandera: '🇩🇪' }, goles_local: 2, goles_visita: 1, estado: 'en_vivo', minuto: 67, estadio: 'Rose Bowl', ciudad: 'Pasadena' },
-        { id: 'p6', fase: 'Fase de Grupos', equipo_local: { nombre: 'Inglaterra', bandera: '🏴󠁧󠁢󠁥󠁮󠁧󠁿' }, equipo_visita: { nombre: 'Países Bajos', bandera: '🇳🇱' }, goles_local: null, goles_visita: null, estado: 'pendiente', fecha: new Date(Date.now() + 86400000 * 4).toISOString(), estadio: 'Arrowhead Stadium', ciudad: 'Kansas City' },
+        // Fase de Grupos
+        { id: 'p1', fase: 'Fase de Grupos', equipo_local: { nombre: 'México', bandera: '🇲🇽', codigo: 'MEX' }, equipo_visita: { nombre: 'Ecuador', bandera: '🇪🇨', codigo: 'ECU' }, goles_local: 2, goles_visita: 1, estado: 'finalizado', estadio: 'SoFi Stadium', ciudad: 'Los Ángeles' },
+        { id: 'p2', fase: 'Fase de Grupos', equipo_local: { nombre: 'Brasil', bandera: '🇧🇷', codigo: 'BRA' }, equipo_visita: { nombre: 'Canadá', bandera: '🇨🇦', codigo: 'CAN' }, goles_local: 3, goles_visita: 0, estado: 'finalizado', estadio: 'MetLife Stadium', ciudad: 'Nueva York' },
+        { id: 'p3', fase: 'Fase de Grupos', equipo_local: { nombre: 'Argentina', bandera: '🇦🇷', codigo: 'ARG' }, equipo_visita: { nombre: 'Perú', bandera: '🇵🇪', codigo: 'PER' }, goles_local: null, goles_visita: null, estado: 'pendiente', fecha: new Date(Date.now() + 86400000 * 2).toISOString(), estadio: 'AT&T Stadium', ciudad: 'Dallas' },
+        { id: 'p4', fase: 'Fase de Grupos', equipo_local: { nombre: 'España', bandera: '🇪🇸', codigo: 'ESP' }, equipo_visita: { nombre: 'Marruecos', bandera: '🇲🇦', codigo: 'MAR' }, goles_local: null, goles_visita: null, estado: 'pendiente', fecha: new Date(Date.now() + 86400000 * 3).toISOString(), estadio: 'Levi\'s Stadium', ciudad: 'Santa Clara' },
+        { id: 'p5', fase: 'Fase de Grupos', equipo_local: { nombre: 'Francia', bandera: '🇫🇷', codigo: 'FRA' }, equipo_visita: { nombre: 'Alemania', bandera: '🇩🇪', codigo: 'GER' }, goles_local: 2, goles_visita: 1, estado: 'en_vivo', minuto: 67, estadio: 'Rose Bowl', ciudad: 'Pasadena' },
+        { id: 'p6', fase: 'Fase de Grupos', equipo_local: { nombre: 'Inglaterra', bandera: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', codigo: 'ENG' }, equipo_visita: { nombre: 'Países Bajos', bandera: '🇳🇱', codigo: 'NED' }, goles_local: null, goles_visita: null, estado: 'pendiente', fecha: new Date(Date.now() + 86400000 * 4).toISOString(), estadio: 'Arrowhead Stadium', ciudad: 'Kansas City' },
+        
+        // Eliminatorias - DUMMIES
+        // Octavos de final
+        { id: 'pe1', fase: 'Octavos de final', equipo_local: { nombre: 'Argentina', codigo: 'ARG' }, equipo_visita: { nombre: 'México', codigo: 'MEX' }, goles_local: 2, goles_visita: 0, estado: 'finalizado' },
+        { id: 'pe2', fase: 'Octavos de final', equipo_local: { nombre: 'Francia', codigo: 'FRA' }, equipo_visita: { nombre: 'Inglaterra', codigo: 'ENG' }, goles_local: 1, goles_visita: 1, estado: 'finalizado' }, // Empate/Penales simulado
+        { id: 'pe3', fase: 'Octavos de final', equipo_local: { nombre: 'Brasil', codigo: 'BRA' }, equipo_visita: { nombre: 'Uruguay', codigo: 'URU' }, goles_local: 3, goles_visita: 1, estado: 'finalizado' },
+        { id: 'pe4', fase: 'Octavos de final', equipo_local: { nombre: 'España', codigo: 'ESP' }, equipo_visita: { nombre: 'Portugal', codigo: 'POR' }, goles_local: 0, goles_visita: 2, estado: 'finalizado' },
+        { id: 'pe5', fase: 'Octavos de final', equipo_local: { nombre: 'Alemania', codigo: 'GER' }, equipo_visita: { nombre: 'Colombia', codigo: 'COL' }, goles_local: 2, goles_visita: 1, estado: 'finalizado' },
+        { id: 'pe6', fase: 'Octavos de final', equipo_local: { nombre: 'Países Bajos', codigo: 'NED' }, equipo_visita: { nombre: 'Senegal', codigo: 'SEN' }, goles_local: 2, goles_visita: 0, estado: 'finalizado' },
+        { id: 'pe7', fase: 'Octavos de final', equipo_local: { nombre: 'Estados Unidos', codigo: 'USA' }, equipo_visita: { nombre: 'Japón', codigo: 'JPN' }, goles_local: 1, goles_visita: 2, estado: 'finalizado' },
+        { id: 'pe8', fase: 'Octavos de final', equipo_local: { nombre: 'Bélgica', codigo: 'BEL' }, equipo_visita: { nombre: 'Marruecos', codigo: 'MAR' }, goles_local: 0, goles_visita: 1, estado: 'finalizado' },
+        
+        // Cuartos de final
+        { id: 'pq1', fase: 'Cuartos de final', equipo_local: { nombre: 'Argentina', codigo: 'ARG' }, equipo_visita: { nombre: 'Francia', codigo: 'FRA' }, goles_local: 3, goles_visita: 2, estado: 'finalizado' },
+        { id: 'pq2', fase: 'Cuartos de final', equipo_local: { nombre: 'Brasil', codigo: 'BRA' }, equipo_visita: { nombre: 'Portugal', codigo: 'POR' }, goles_local: 1, goles_visita: 0, estado: 'finalizado' },
+        { id: 'pq3', fase: 'Cuartos de final', equipo_local: { nombre: 'Alemania', codigo: 'GER' }, equipo_visita: { nombre: 'Países Bajos', codigo: 'NED' }, goles_local: 0, goles_visita: 2, estado: 'finalizado' },
+        { id: 'pq4', fase: 'Cuartos de final', equipo_local: { nombre: 'Japón', codigo: 'JPN' }, equipo_visita: { nombre: 'Marruecos', codigo: 'MAR' }, goles_local: 1, goles_visita: 1, estado: 'en_vivo', minuto: 112 }, // En vivo
+        
+        // Semifinales
+        { id: 'ps1', fase: 'Semifinal', equipo_local: { nombre: 'Argentina', codigo: 'ARG' }, equipo_visita: { nombre: 'Brasil', codigo: 'BRA' }, goles_local: null, goles_visita: null, estado: 'pendiente', fecha: new Date(Date.now() + 86400000 * 10).toISOString() },
+        { id: 'ps2', fase: 'Semifinal', equipo_local: { nombre: 'Países Bajos', codigo: 'NED' }, equipo_visita: { nombre: 'Por definir' }, goles_local: null, goles_visita: null, estado: 'pendiente' },
+        
+        // Final
+        { id: 'pf1', fase: 'Final', equipo_local: { nombre: 'Por definir' }, equipo_visita: { nombre: 'Por definir' }, goles_local: null, goles_visita: null, estado: 'pendiente' },
       ];
 
       poblarSelectsSelecciones();
