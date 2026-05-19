@@ -2024,11 +2024,18 @@
       letter-spacing: 1px;
     }
 
+    .bracket-wrapper {
+      overflow-x: auto;
+      padding-bottom: 20px;
+      scrollbar-width: thin;
+    }
+
     .bracket-container {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 16px;
       align-items: start;
+      min-width: 900px; /* Forces scrolling on small screens */
     }
 
     .bracket-col {
@@ -2160,12 +2167,27 @@
       align-items: center;
       gap: 16px;
       transition: transform .2s, border-color .2s, box-shadow .2s;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
     }
 
     .jugador-card:hover {
       transform: translateY(-3px);
       border-color: var(--border2);
       box-shadow: 0 8px 24px rgba(0, 0, 0, .15);
+    }
+    
+    .jc-bg-flag {
+      position: absolute;
+      right: -10%;
+      top: -10%;
+      height: 120%;
+      opacity: 0.04;
+      z-index: -1;
+      pointer-events: none;
+      mask-image: linear-gradient(to right, transparent, black);
+      -webkit-mask-image: linear-gradient(to right, transparent, black);
     }
 
     .jc-avatar {
@@ -2185,6 +2207,7 @@
     .jc-info {
       flex: 1;
       min-width: 0;
+      padding-right: 8px; /* Evita que choque con los goles */
     }
 
     .jc-name {
@@ -2202,18 +2225,20 @@
       color: var(--text3);
       display: flex;
       align-items: center;
-      gap: 8px;
-      margin-top: 2px;
+      gap: 6px;
+      margin-top: 4px;
+      flex-wrap: wrap; /* Asegura que el tag MED no se desborde si el nombre del país es muy largo */
     }
 
     .jc-pos {
       display: inline-block;
-      padding: 2px 8px;
+      padding: 2px 6px;
       border-radius: 4px;
-      font-size: 10px;
-      font-weight: 600;
+      font-size: 9px;
+      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 1px;
+      white-space: nowrap;
     }
 
     .jc-pos.del {
@@ -2254,7 +2279,8 @@
 
     @media (max-width: 768px) {
       .bracket-container {
-        grid-template-columns: 1fr 1fr;
+        /* On mobile, we keep the grid but let it scroll inside bracket-wrapper */
+        min-width: 800px;
       }
 
       .jugadores-grid {
