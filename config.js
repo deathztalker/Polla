@@ -1,26 +1,21 @@
 // ============================================================
 // config.js — POLLA MUNDIALERA 2026
-// ⚠️  COMPLETA TUS CLAVES ANTES DE SUBIR A GITHUB PAGES
-// ⚠️  NO subas este archivo con claves reales a repos públicos
-//     Usa GitHub Secrets o variables de entorno para producción
+// Configuración de Supabase + API-Football
 // ============================================================
 
 const CONFIG = {
   // ----------------------------------------------------------
   // SUPABASE
-  // Obtén estas claves en: https://supabase.com/dashboard/project/_/settings/api
   // ----------------------------------------------------------
-  SUPABASE_URL:      'https://TU-PROYECTO.supabase.co',
-  SUPABASE_ANON_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.TU_ANON_KEY',
+  SUPABASE_URL:      'https://rkarxmetbktowmmxkfam.supabase.co',
+  SUPABASE_ANON_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJrYXJ4bWV0Ymt0b3dtbXhrZmFtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU5NDY3MjksImV4cCI6MjA5MTUyMjcyOX0.eVctkjVHkscDH_o6G_txKpo-3MOabmHJySbWdsZFnIE',
 
   // ----------------------------------------------------------
-  // API-FOOTBALL (datos de partidos en vivo)
-  // Regístrate gratis en: https://www.api-football.com/
-  // Plan gratuito: 100 requests/día (suficiente para desarrollo)
+  // API-FOOTBALL: La sincronización se hace vía Edge Function
+  // en Supabase (sync-football). No se necesita la key aquí.
   // ----------------------------------------------------------
-  API_FOOTBALL_KEY:  'TU_API_FOOTBALL_KEY',
   API_FOOTBALL_HOST: 'v3.football.api-sports.io',
-  API_FOOTBALL_LIGA: 1,        // 1 = FIFA World Cup
+  API_FOOTBALL_LIGA: 1,
   API_FOOTBALL_TEMPORADA: 2026,
 
   // ----------------------------------------------------------

@@ -1,0 +1,20 @@
+# Local env files containing secrets
+.env
+.env.local
+.env.*
+
+# Backend and DB scripts (keep public repo clean for GH Pages)
+supabase/
+schema*.sql
+
+# Logs and documents
+*.md
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.dylib
+Thumbs.db
